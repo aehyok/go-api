@@ -40,14 +40,14 @@ func main() {
 	var Db *sqlx.DB = connectMysql()
 	defer Db.Close()
 	fmt.Printf("insert success\n")
-	// addRecord(Db)
+	addRecord(Db)
 	updateRecord(Db)
-	// deleteRecord(Db)
+	deleteRecord(Db)
 }
 
 func addRecord(Db *sqlx.DB) {
 	for i := 0; i < 2; i++ {
-		result, err := Db.Exec("insert into user (account,nickName,password) values('111', '222', '3333')")
+		result, err := Db.Exec("insert into user (id,account,nickName,password) values(5,'111', '222', '3333')")
 		if err != nil {
 			fmt.Printf("data insert faied, error:[%v]", err.Error())
 			return
