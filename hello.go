@@ -58,6 +58,8 @@ func addRecord(Db *sqlx.DB) {
 	}
 }
 
+//  要定义struct 结构体的 https://blog.csdn.net/qq_41480750/article/details/91127105
+//  不需要定义struct 结构体的  https://blog.csdn.net/weixin_44054396/article/details/120065431
 func selectRecord(Db *sqlx.DB) {
 	rows, err := Db.Query(" select * from  user")
 	if err != nil {
